@@ -9,7 +9,10 @@ export default function Contact() {
   return (
     <section className="section-shell contact-section content-section" id="contact">
       <div className="section-heading">
-        <p className="eyebrow">Start a Thread</p>
+        <div className="section-label">
+          <span>05 / Contact</span>
+          <span>Signal / Final Call</span>
+        </div>
         <h2>Contact</h2>
       </div>
       <div className="contact-panel">

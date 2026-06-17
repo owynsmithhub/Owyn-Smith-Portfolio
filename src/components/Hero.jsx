@@ -13,7 +13,14 @@ export default function Hero() {
         <span />
       </div>
       <div className="hero-content">
-        <p className="eyebrow">Web / Design / Creative Coding</p>
+        <div className="section-label">
+          <span>01 / Hero</span>
+          <span>Identity / Monolith</span>
+        </div>
+        <div className="hero-meta" aria-label="Portfolio metadata">
+          <span>OVJS / Portfolio / 2026</span>
+          <span>Interactive Web + Visual Systems</span>
+        </div>
         <h1 id="hero-title" className="hero-title" aria-label="Owyn Smith">
           {heroWords.map((word, wordIndex) => (
             <Fragment key={word}>

@@ -5,7 +5,7 @@ export default function Footer() {
         <a className="brand-mark" href="#top" aria-label="OVJS home">
           OVJS
         </a>
-        <p>Designed and built by Owyn Smith.</p>
+        <p>Designed and built by Owyn Smith. Portfolio system / 2026.</p>
       </div>
     </footer>
   );
