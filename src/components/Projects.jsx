@@ -41,18 +41,19 @@ const projects = [
       { label: 'Open prototype', href: campusPrototypeUrl, external: true },
     ],
   },
-  {
-    visual: 'comics',
-    layout: 'upcoming',
-    type: 'Front-end project',
-    year: 'In progress',
-    title: 'Comic Book Collection',
-    description:
-      'A visual collection interface for browsing, organizing, and displaying a personal comic book library.',
-    role: 'Front-end design + development',
-    tags: ['Front-end', 'Collection Design', 'Visual UI'],
-    status: 'Details coming soon',
-  },
+  // Upcoming project drafts - uncomment when ready to publish:
+  // {
+  //   visual: 'comics',
+  //   layout: 'upcoming',
+  //   type: 'Front-end project',
+  //   year: 'In progress',
+  //   title: 'Comic Book Collection',
+  //   description:
+  //     'A visual collection interface for browsing, organizing, and displaying a personal comic book library.',
+  //   role: 'Front-end design + development',
+  //   tags: ['Front-end', 'Collection Design', 'Visual UI'],
+  //   status: 'Details coming soon',
+  // },
 ];
 
 function ProjectVisual({ project }) {
