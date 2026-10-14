@@ -13,13 +13,9 @@ export default function Hero() {
         <span />
       </div>
       <div className="hero-content">
-        <div className="section-label">
-          <span>01 / Hero</span>
-          <span>Identity / Monolith</span>
-        </div>
         <div className="hero-meta" aria-label="Portfolio metadata">
           <span>OVJS / Portfolio / 2026</span>
-          <span>Interactive Web + Visual Systems</span>
+          <span>Informatics / HCI / Indiana University</span>
         </div>
         <h1 id="hero-title" className="hero-title" aria-label="Owyn Smith">
           {heroWords.map((word, wordIndex) => (
@@ -44,16 +40,20 @@ export default function Hero() {
             </Fragment>
           ))}
         </h1>
+        <div className="hero-statement">
+          <p>Informatics major</p>
+          <p>Human-Computer Interaction minor</p>
+        </div>
         <p className="hero-subtitle">
-          I build interactive web experiences with a focus on motion, atmosphere,
-          and visual storytelling.
+          I design usable interfaces, prototype interactions, and build the
+          front-end systems behind them.
         </p>
         <div className="hero-buttons" aria-label="Hero links">
           <a className="button button-primary" href="#projects">
             View Projects
           </a>
-          <a className="button button-secondary" href="#lab">
-            Explore Lab
+          <a className="button button-secondary" href="#about">
+            About Me
           </a>
         </div>
       </div>

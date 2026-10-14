@@ -1,70 +1,155 @@
+import { prototypeUrl, campusPrototypeUrl } from '../data/caseStudies.js';
+import campusTransitImage from '../assets/projects/campus-transit/exports/transit-screen-1.png';
+import h2goImage from '../assets/projects/h2go/exports/h2go-home-final.png';
+
 const projects = [
   {
-    code: 'OVJS-001',
-    title: 'Underwater Collection',
+    visual: 'hydration',
+    image: h2goImage,
+    imageAlt:
+      'H2Go hydration dashboard showing bottle progress, points, and check-in.',
+    layout: 'lead',
+    type: 'UX/UI case study',
+    year: '2025',
+    title: 'H2Go',
     description:
-      'An atmospheric collection-based website exploring visual storytelling, interaction, and digital presentation.',
-    tags: ['Front-end', 'Visual Design', 'Interaction'],
-    projectHref: '#',
-    githubHref: '#',
+      'A reminder-to-reward hydration system shaped through peer research, usability testing, and interface iteration.',
+    role: 'UI design + prototyping',
+    tags: ['Figma', 'User Testing', 'Interaction Design'],
+    primaryHref: '#/projects/h2go',
+    actions: [
+      { label: 'View case study', href: '#/projects/h2go' },
+      { label: 'Open prototype', href: prototypeUrl, external: true },
+    ],
   },
   {
-    code: 'OVJS-002',
-    title: 'Straight Out the Kiln',
+    visual: 'transit',
+    image: campusTransitImage,
+    imageAlt:
+      'Campus Transit mobile app showing favorite bus routes and arrival times.',
+    layout: 'secondary',
+    type: 'UX/UI case study',
+    year: '2025',
+    title: 'Campus Transit',
     description:
-      'A branded landing page concept focused on layout, identity, and responsive presentation.',
-    tags: ['Branding', 'Web Design', 'Responsive UI'],
-    projectHref: '#',
-    githubHref: '#',
+      'A focused route-planning concept refined around arrival accuracy, capacity, favorites, and fast rider decisions.',
+    role: 'UI design + prototyping',
+    tags: ['Research', 'Usability Testing', 'Mobile UI'],
+    primaryHref: '#/projects/campus-transit',
+    actions: [
+      { label: 'View case study', href: '#/projects/campus-transit' },
+      { label: 'Open prototype', href: campusPrototypeUrl, external: true },
+    ],
   },
   {
-    code: 'OVJS-003',
-    title: 'Portfolio Website',
+    visual: 'comics',
+    layout: 'upcoming',
+    type: 'Front-end project',
+    year: 'In progress',
+    title: 'Comic Book Collection',
     description:
-      'A personal portfolio system built around motion, atmosphere, and a flexible project/lab structure.',
-    tags: ['React', 'Creative Coding', 'Portfolio'],
-    projectHref: '#',
-    githubHref: '#',
+      'A visual collection interface for browsing, organizing, and displaying a personal comic book library.',
+    role: 'Front-end design + development',
+    tags: ['Front-end', 'Collection Design', 'Visual UI'],
+    status: 'Details coming soon',
   },
 ];
 
+function ProjectVisual({ project }) {
+  return (
+    <div
+      className={`project-image-panel visual-${project.visual}`}
+      aria-hidden={project.image ? undefined : true}
+    >
+      {project.image ? (
+        <div className="project-phone-crop">
+          <img
+            className="project-card-image"
+            src={project.image}
+            alt={project.imageAlt}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      ) : (
+        <>
+          <div className="visual-shape visual-shape-one" />
+          <div className="visual-shape visual-shape-two" />
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function Projects() {
   return (
-    <section className="section-shell content-section projects-section" id="projects">
-      <div className="section-heading">
-        <div className="section-label">
-          <span>02 / Projects</span>
-          <span>Gallery / Case Study Wall</span>
+    <section className="projects-section" id="projects">
+      <div className="section-shell content-section">
+        <div className="section-heading projects-heading" data-reveal>
+          <div className="section-label">
+            <span>01 / Selected Work</span>
+            <span>Web / Design / Creative Development</span>
+          </div>
+          <h2>My work</h2>
         </div>
-        <h2>Projects</h2>
-      </div>
-      <div className="card-grid project-grid">
-        {projects.map((project, index) => (
-          <article
-            className="project-card"
-            key={project.title}
-            style={{ '--stagger': `${index * 90}ms` }}
-          >
-            <div className="project-image-panel" aria-hidden="true">
-              <span>{project.code}</span>
-              <div />
-            </div>
-            <div className="project-card-body">
-              <p className="card-code">{project.code}</p>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-            </div>
-            <ul className="tag-list" aria-label={`${project.title} tags`}>
-              {project.tags.map((tag) => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
-            <div className="card-actions">
-              <a href={project.projectHref}>View Project</a>
-              <a href={project.githubHref}>GitHub</a>
-            </div>
-          </article>
-        ))}
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <article
+              className={`project-card project-card-${project.layout}`}
+              key={project.title}
+              style={{ '--stagger': `${index * 90}ms` }}
+              data-reveal
+            >
+              {project.primaryHref ? (
+                <a
+                  className="project-visual-link"
+                  href={project.primaryHref}
+                  aria-label={`View ${project.title} case study`}
+                >
+                  <ProjectVisual project={project} />
+                </a>
+              ) : (
+                <ProjectVisual project={project} />
+              )}
+              <div className="project-card-meta">
+                <span>{project.type}</span>
+                <span>{project.year}</span>
+              </div>
+              <div className="project-card-body">
+                <h3>
+                  {project.primaryHref ? (
+                    <a href={project.primaryHref}>{project.title}</a>
+                  ) : (
+                    project.title
+                  )}
+                </h3>
+                <p>{project.description}</p>
+              </div>
+              <p className="project-role">
+                <span>Role</span>
+                {project.role}
+              </p>
+              <ul className="tag-list" aria-label={`${project.title} tags`}>
+                {project.tags.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+              <div className="card-actions">
+                {project.actions?.map((action) => (
+                  <a
+                    href={action.href}
+                    key={action.label}
+                    target={action.external ? '_blank' : undefined}
+                    rel={action.external ? 'noreferrer' : undefined}
+                  >
+                    {action.label}
+                  </a>
+                ))}
+                {project.status && <span className="project-status">{project.status}</span>}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
