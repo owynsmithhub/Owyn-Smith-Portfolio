@@ -1415,9 +1415,20 @@ button:focus-visible {
   grid-column: 1 / -1;
 }
 
-.contact-links .button::after {
-  font-family: var(--font-mono);
-  content: '->';
+.contact-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: rgba(255, 249, 239, 0.82);
+  transition: transform 180ms var(--ease), color 180ms ease;
+}
+
+.contact-links .button:hover .contact-link-icon {
+  color: #17202a;
+  transform: translateX(2px);
 }
 
 .contact-links .button:hover {
