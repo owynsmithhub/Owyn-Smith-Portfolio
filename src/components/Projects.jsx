@@ -10,6 +10,7 @@ const projects = [
       'H2Go hydration dashboard showing bottle progress, points, and check-in.',
     layout: 'lead',
     type: 'UX/UI case study',
+    status: 'Prototype',
     year: '2025',
     title: 'H2Go',
     description:
@@ -29,6 +30,7 @@ const projects = [
       'Campus Transit mobile app showing favorite bus routes and arrival times.',
     layout: 'secondary',
     type: 'UX/UI case study',
+    status: 'Prototype',
     year: '2025',
     title: 'Campus Transit',
     description:
@@ -113,7 +115,15 @@ export default function Projects() {
                 <ProjectVisual project={project} />
               )}
               <div className="project-card-meta">
-                <span>{project.type}</span>
+                <div className="project-meta-left">
+                  <span>{project.type}</span>
+                  {project.status && (
+                    <span className={`status-badge status-${project.status.toLowerCase().replace(/\s+/g, '-')}`}>
+                      <span className="status-dot" aria-hidden="true" />
+                      {project.status}
+                    </span>
+                  )}
+                </div>
                 <span>{project.year}</span>
               </div>
               <div className="project-card-body">
@@ -146,7 +156,9 @@ export default function Projects() {
                     {action.label}
                   </a>
                 ))}
-                {project.status && <span className="project-status">{project.status}</span>}
+                {!project.actions?.length && project.status && (
+                  <span className="project-status">{project.status}</span>
+                )}
               </div>
             </article>
           ))}

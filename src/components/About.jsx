@@ -14,7 +14,7 @@ export default function About() {
           <p className="about-copy">
             I&apos;m an Informatics major with a minor in Human-Computer Interaction
             at Indiana University Bloomington. I design and build user-centered
-            digital products that bring together clear interaction, accessible
+            digital products that bring together clear interaction, usable
             interfaces, and thoughtful front-end implementation.
           </p>
           <p className="about-detail">
@@ -30,7 +30,7 @@ export default function About() {
             </div>
             <div>
               <dt>Focus</dt>
-              <dd>UX/UI, interaction design, accessibility, and front-end development</dd>
+              <dd>UX/UI, interaction design, usability, and front-end development</dd>
             </div>
             <div>
               <dt>Tools</dt>

@@ -27,6 +27,7 @@ export const caseStudies = {
     title: 'H2Go',
     subtitle: 'A hydration tracker that turns reusable-bottle habits into visible progress.',
     year: '2025',
+    status: 'Prototype',
     context: 'INFO-I300 / Team project',
     discipline: 'UX/UI + Prototyping',
     role: 'UI design and prototyping',
@@ -123,6 +124,7 @@ export const caseStudies = {
     title: 'Campus Transit',
     subtitle: 'A focused transit concept for routes, capacity, and real-time campus travel.',
     year: '2025',
+    status: 'Prototype',
     context: 'INFO-I300 / Team project',
     discipline: 'UX/UI + Prototyping',
     role: 'UI design and prototyping',
@@ -137,7 +139,7 @@ export const caseStudies = {
       eyebrow: 'The challenge',
       title: 'Reduce uncertainty without overwhelming riders with information.',
       copy:
-        'Existing campus transit tools felt difficult to use and visually dated. Interviews also surfaced frustration with inaccurate day-to-day route data. The team needed to balance live information, accessibility, and route planning inside a simple mobile experience.',
+        'Existing campus transit tools felt difficult to use and visually dated. Interviews also surfaced frustration with inaccurate day-to-day route data. The team needed to balance live information, usability, and route planning inside a simple mobile experience.',
     },
     signals: [
       { label: 'Priority', value: 'Accuracy' },
@@ -153,7 +155,7 @@ export const caseStudies = {
         copy:
           'Secondary research connected well-designed multimodal apps with changes in walking, transit, and driving behavior. Interviews brought the issue closer to campus: riders cared about accurate arrivals, delay status, capacity, and navigation they could understand quickly.',
         image: campusEarly,
-        imageAlt: 'Campus Transit early sketches exploring live tracking and an accessible interface.',
+        imageAlt: 'Campus Transit early sketches exploring live tracking and a usable interface.',
         bullets: [
           'Prioritize relevant route information over feature volume.',
           'Design for different devices and levels of technical comfort.',
@@ -165,7 +167,7 @@ export const caseStudies = {
         eyebrow: 'Concept development',
         title: 'Multiple directions converged on one streamlined system.',
         copy:
-          'Early concepts explored an all-in-one live-tracking screen and a tutorial-heavy accessibility approach. Reviews showed that both could become overwhelming. The final direction combined their strongest ideas while distributing information across clearer screens.',
+          'Early concepts explored an all-in-one live-tracking screen and a tutorial-heavy usability approach. Reviews showed that both could become overwhelming. The final direction combined their strongest ideas while distributing information across clearer screens.',
         image: campusFinalized,
         imageAlt: 'Campus Transit finalized concept combining accuracy, efficiency, and simple navigation.',
         bullets: [

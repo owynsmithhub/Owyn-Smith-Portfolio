@@ -693,7 +693,8 @@ button:focus-visible {
 .project-card-meta {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+  align-items: center;
+  gap: 14px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(244, 239, 230, 0.18);
   color: var(--gallery-muted);
@@ -701,6 +702,55 @@ button:focus-visible {
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.project-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(244, 239, 230, 0.22);
+  background: rgba(244, 239, 230, 0.08);
+  color: var(--gallery-text);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-prototype .status-dot,
+.status-dot-prototype {
+  background: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.55);
+}
+
+.status-in-progress .status-dot,
+.status-dot-in-progress {
+  background: #38bdf8;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.55);
+}
+
+.status-shipped .status-dot,
+.status-dot-shipped {
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.55);
 }
 
 .project-card h3 {
@@ -919,6 +969,12 @@ button:focus-visible {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.45;
+}
+
+.case-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .case-hero-media {

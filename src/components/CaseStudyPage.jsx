@@ -13,7 +13,7 @@ export default function CaseStudyPage({ project }) {
             <a className="case-back-link" href="#projects">
               Back to selected work
             </a>
-            <p className="case-kicker">UX/UI case study</p>
+            <p className="case-kicker">UX/UI case study{project.status ? ` · ${project.status}` : ''}</p>
             <h1>{project.title}</h1>
             <p className="case-subtitle">{project.subtitle}</p>
           </div>
@@ -21,6 +21,16 @@ export default function CaseStudyPage({ project }) {
             <div>
               <dt>Year</dt>
               <dd>{project.year}</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd className="case-status-badge">
+                <span
+                  className={`status-dot status-dot-${project.status?.toLowerCase().replace(/\s+/g, '-')}`}
+                  aria-hidden="true"
+                />
+                {project.status}
+              </dd>
             </div>
             <div>
               <dt>Context</dt>
